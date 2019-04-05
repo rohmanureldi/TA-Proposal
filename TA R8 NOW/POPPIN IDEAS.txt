@@ -1,0 +1,16 @@
+------------------ POPPIN IDEAS 05/04/2019    KFC BUBAT ------------------------
+
+1. Jadi lu udah nemu makalah tentang cara melakukan pengubahan nilai multi attribute jadi single attribbute pake MAUT
+2. Maut ngubah poin attribute jadi 1.2314blabla
+3. Nah nanti atribute dari si user preference di ubah jadi maut juga
+4. trus ntar semua hotel juga dirubah ke maut.
+5. nah nilai mautnya si user bakal jadi parameter minimal untuk rekomendasi hotel.
+6. 	misal user pref	: 1.234
+	hotel a		: 0.244
+	hotel b		: 1.423
+	hotel c		: 1.343
+	rekomendasi yang keluar:	hotel b
+					hotel c
+
+
+------------------ POPPIN IDEAS 05/04/2019    KFC BUBAT ------------------------
