@@ -41,6 +41,12 @@ pengelolaan_bobot=((hitung_bobot(pengelolaan_index,pengelolaan_value,0))/2)
 produk_bobot2=(hitung_bobot(produk_index,produk_value,1)/20.5)
 pelayanan_bobot2=(hitung_bobot(pelayanan_index,pelayanan_value,1)/14)
 pengelolaan_bobot2=(hitung_bobot(pengelolaan_index,pengelolaan_value,1)/2)
+preferensi={
+        'produk':0.561644,
+        'pelayanan':0.383562,
+        'pengelolaan':0.054795}
+
+
 
 pembobotan = pd.DataFrame({
 #        'index':[0,1,2],
@@ -52,8 +58,9 @@ pembobotan = pd.DataFrame({
 pembobotan=pembobotan.set_index('alternatif')
 print((pembobotan['produk'].min()))
 
-normalisasi_hotel1=0
-def normalisasi(hotel):
+
+#normalisasi_hotel1=normalisasi()
+def normalisasi():
     hasil_normalisasi_array=[]
     karakteristik=['produk','pelayanan','pengelolaan']
     for i in range(0,(len(pembobotan))-1):
@@ -62,11 +69,14 @@ def normalisasi(hotel):
             bobot_alternatif=pembobotan[j][i]
             x_min=pembobotan[j].min()
             x_max=pembobotan[j].max()
-            pre_hasil=(bobot_alternatif-x_min)/(x_max-x_min)
-        hasil_normalisasi_array.append()
-        
             
-    
+            pref=preferensi[j]
+            pre_hasil+=pref*(bobot_alternatif-x_min)/(x_max-x_min)
+        hasil_normalisasi_array.append(pre_hasil)
+    return hasil_normalisasi_array
+
+normalisasi_hotel=normalisasi()
+print(normalisasi())
     
 
 
