@@ -28,10 +28,7 @@ def hitung_bobot(index,value,j):
             sum+=1
         if(index[i]=="TM" and value[j][i]==1):
             sum+=0.5
-            
     return sum
-
-
 
 
 produk_bobot=((hitung_bobot(produk_index,produk_value,0))/20.5)
@@ -49,19 +46,17 @@ preferensi={
 
 
 pembobotan = pd.DataFrame({
-#        'index':[0,1,2],
         'alternatif':['hotel1','hotel2','preferensi'],
         'produk':[produk_bobot,produk_bobot2,0.561644],
         'pelayanan':[pelayanan_bobot,pelayanan_bobot2,0.383562],
         'pengelolaan':[pengelolaan_bobot/36.5,pengelolaan_bobot2,0.054795]})
 
 pembobotan=pembobotan.set_index('alternatif')
-print((pembobotan['produk'].min()))
 
+print(pembobotan.index[0])
 
-#normalisasi_hotel1=normalisasi()
 def normalisasi():
-    hasil_normalisasi_array=[]
+    hasil_normalisasi_array={}
     karakteristik=['produk','pelayanan','pengelolaan']
     for i in range(0,(len(pembobotan))-1):
         pre_hasil=0
@@ -69,15 +64,16 @@ def normalisasi():
             bobot_alternatif=pembobotan[j][i]
             x_min=pembobotan[j].min()
             x_max=pembobotan[j].max()
+            pre_hasil+=preferensi[j]*(bobot_alternatif-x_min)/(x_max+x_min)
             
-            pref=preferensi[j]
-            pre_hasil+=pref*(bobot_alternatif-x_min)/(x_max-x_min)
-        hasil_normalisasi_array.append(pre_hasil)
+            
+        hasil_normalisasi_array.update({pembobotan.index[i]:pre_hasil})
+        
     return hasil_normalisasi_array
 
 normalisasi_hotel=normalisasi()
-print(normalisasi())
-    
+normalisasi_hotel=sorted(normalisasi_hotel.items(), key=lambda kv: kv[1])
+normalisasi_hotel.reverse()         #normalisasi_hotel is tuple
 
 
     
