@@ -34,25 +34,38 @@ def hitung_bobot(index,value,j):
 
 
 
-produk_bobot=hitung_bobot(produk_index,produk_value,0)
-pelayanan_bobot=hitung_bobot(pelayanan_index,pelayanan_value,0)
-pengelolaan_bobot=hitung_bobot(pengelolaan_index,pengelolaan_value,0)
+produk_bobot=((hitung_bobot(produk_index,produk_value,0))/20.5)
+pelayanan_bobot=((hitung_bobot(pelayanan_index,pelayanan_value,0))/14)
+pengelolaan_bobot=((hitung_bobot(pengelolaan_index,pengelolaan_value,0))/2)
 
-produk_bobot2=hitung_bobot(produk_index,produk_value,1)
-pelayanan_bobot2=hitung_bobot(pelayanan_index,pelayanan_value,1)
-pengelolaan_bobot2=hitung_bobot(pengelolaan_index,pengelolaan_value,1)
+produk_bobot2=(hitung_bobot(produk_index,produk_value,1)/20.5)
+pelayanan_bobot2=(hitung_bobot(pelayanan_index,pelayanan_value,1)/14)
+pengelolaan_bobot2=(hitung_bobot(pengelolaan_index,pengelolaan_value,1)/2)
 
 pembobotan = pd.DataFrame({
+#        'index':[0,1,2],
         'alternatif':['hotel1','hotel2','preferensi'],
-        'produk':[produk_bobot/36.5,produk_bobot2/36.5,0.561644],
-        'pelayanan':[pelayanan_bobot/36.5,pelayanan_bobot2/36.5,0.383562],
-        'pengelolaan':[pengelolaan_bobot/36.5,pengelolaan_bobot2/36.5,0.054795]})
+        'produk':[produk_bobot,produk_bobot2,0.561644],
+        'pelayanan':[pelayanan_bobot,pelayanan_bobot2,0.383562],
+        'pengelolaan':[pengelolaan_bobot/36.5,pengelolaan_bobot2,0.054795]})
 
 pembobotan=pembobotan.set_index('alternatif')
-print(pembobotan['produk'][2])
+print((pembobotan['produk'].min()))
 
-def normalisasi(alternatif):
-    bobot_alternatif=alternatif
+normalisasi_hotel1=0
+def normalisasi(hotel):
+    hasil_normalisasi_array=[]
+    karakteristik=['produk','pelayanan','pengelolaan']
+    for i in range(0,(len(pembobotan))-1):
+        pre_hasil=0
+        for j in karakteristik:
+            bobot_alternatif=pembobotan[j][i]
+            x_min=pembobotan[j].min()
+            x_max=pembobotan[j].max()
+            pre_hasil=(bobot_alternatif-x_min)/(x_max-x_min)
+        hasil_normalisasi_array.append()
+        
+            
     
     
 
