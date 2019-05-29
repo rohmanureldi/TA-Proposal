@@ -31,9 +31,8 @@ for i in range(1,df.shape[1]):
 #produk_value=pd.concat([produk_value,produk_value2],ignore_index=True,axis=1)
 ##pelayanan_value=pd.concat([produk_value,pelayanan_value2],ignore_index=True,axis=1)
 #pengelolaan_value=pd.concat([produk_value,pengelolaan_value2],ignore_index=True,axis=1)
-    
-print(produk_value[0][3])
-print(produk_index[0])
+
+
 
 def hitung_bobot(index,listValue,j):
     sum=0
@@ -81,7 +80,6 @@ pembobotan = pd.DataFrame({
 
 pembobotan=pembobotan.set_index('alternatif')
 
-print(len(pembobotan))
 
 def normalisasi():
     hasil_normalisasi_array={}
