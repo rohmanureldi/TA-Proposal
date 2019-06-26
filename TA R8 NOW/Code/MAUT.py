@@ -33,7 +33,7 @@ for i in range(1,df.shape[1]):
 #pengelolaan_value=pd.concat([produk_value,pengelolaan_value2],ignore_index=True,axis=1)
 
 
-
+# Menghitung bobot utk tiap kategori produk,pelayanan,pengelolaan (jika M: +1, TM: +0.5)
 def hitung_bobot(index,listValue,j):
     sum=0
     for i in range (0, len(index)):
@@ -44,7 +44,6 @@ def hitung_bobot(index,listValue,j):
     return sum
 
 
-print(hitung_bobot(produk_index,produk_value,0))
 
 produk_bobot=pd.DataFrame()
 pelayanan_bobot=pd.DataFrame()
@@ -55,6 +54,8 @@ for k in range(0,produk_value.shape[1]):
     pengelolaan_bobot.insert(k,('hotel '+str(k+1)),[(hitung_bobot(pengelolaan_index,pengelolaan_value,k))/2])
 
 
+#???? THE HELL DID I THINK ????
+    
 produk_bobot=((hitung_bobot(produk_index,produk_value,0))/20.5)
 pelayanan_bobot=((hitung_bobot(pelayanan_index,pelayanan_value,0))/14)
 pengelolaan_bobot=((hitung_bobot(pengelolaan_index,pengelolaan_value,0))/2)
@@ -62,7 +63,6 @@ pengelolaan_bobot=((hitung_bobot(pengelolaan_index,pengelolaan_value,0))/2)
 produk_bobot2=(hitung_bobot(produk_index,produk_value,1)/20.5)
 pelayanan_bobot2=(hitung_bobot(pelayanan_index,pelayanan_value,1)/14)
 pengelolaan_bobot2=(hitung_bobot(pengelolaan_index,pengelolaan_value,1)/2)
-
 
 
 preferensi={
