@@ -72,11 +72,11 @@
     <android.support.constraint.ConstraintLayout
         android:id="@+id/filter_container"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:outlineProvider="bounds"
         android:elevation="5dp"
         android:background="@drawable/main_background_border"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="10dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
@@ -129,7 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
-            android:max="100"
+            android:max="5"
             android:thumbTint="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@id/txt_produk"
             app:layout_constraintStart_toStartOf="@id/txt_produk"
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
-            android:max="100"
+            android:max="5"
             android:thumbTint="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@id/txt_pelayanan"
             app:layout_constraintStart_toStartOf="@id/txt_pelayanan"
@@ -173,7 +173,7 @@
             android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/seekBar_pelayanan"
-            android:text="P E L A Y A N A N"
+            android:text="P E N G E L O L A A N"
             android:textColor="#08AD98"
             android:textStyle="bold"
             android:textSize="15sp"
@@ -185,7 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
-            android:max="100"
+            android:max="5"
             android:thumbTint="@color/colorPrimary"
             app:layout_constraintTop_toBottomOf="@id/txt_pengelolaan"
             app:layout_constraintStart_toStartOf="@id/txt_pengelolaan"
@@ -194,15 +194,87 @@
             />
         
         <Button
+            android:id="@+id/btn_filter"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button_background"
             android:text="FILTER"
-            android:textColor="#A9FFFFFF"
-            app:layout_constraintTop_toBottomOf="@id/seekBar_pengelolaan"
+            android:textColor="#faFFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/sb_progress_produk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_produk"
+            app:layout_constraintEnd_toEndOf="@id/seekBar_produk"
+            app:layout_constraintTop_toTopOf="@id/txt_produk"/>
+
+        <TextView
+            android:id="@+id/sb_progress_pelayanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pelayanan"
+            app:layout_constraintEnd_toEndOf="@id/seekBar_pelayanan"
+            app:layout_constraintTop_toTopOf="@id/txt_pelayanan"/>
+
+        <TextView
+            android:id="@+id/sb_progress_pengelolaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="15sp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pengelolaan"
+            app:layout_constraintEnd_toEndOf="@id/seekBar_pengelolaan"
+            app:layout_constraintTop_toTopOf="@id/txt_pengelolaan"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_star"
+            app:layout_constraintTop_toTopOf="@id/sb_progress_produk"
+            app:layout_constraintEnd_toStartOf="@id/sb_progress_produk"
+            app:layout_constraintBottom_toBottomOf="@id/sb_progress_produk"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_star"
+            app:layout_constraintTop_toTopOf="@id/sb_progress_pelayanan"
+            app:layout_constraintEnd_toStartOf="@id/sb_progress_pelayanan"
+            app:layout_constraintBottom_toBottomOf="@id/sb_progress_pelayanan"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_star"
+            app:layout_constraintTop_toTopOf="@id/sb_progress_pengelolaan"
+            app:layout_constraintEnd_toStartOf="@id/sb_progress_pengelolaan"
+            app:layout_constraintBottom_toBottomOf="@id/sb_progress_pengelolaan"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_filter_list_black_24dp"
+            android:background="@android:color/transparent"
+            android:text="Advanced filter  "
+            android:textColor="#49A97C"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@id/seekBar_pengelolaan"
+            app:layout_constraintStart_toStartOf="@id/seekBar_pengelolaan"
+            app:layout_constraintEnd_toEndOf="@id/seekBar_pengelolaan"
+            app:layout_constraintBottom_toTopOf="@id/btn_filter"
+
+            />
 
 
     </android.support.constraint.ConstraintLayout>

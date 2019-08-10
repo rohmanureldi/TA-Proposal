@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_background_border">
+
+    <TextView
+        android:id="@+id/nama_hotel_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NAMA HOTEL"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintStart_toEndOf="@id/gambar_hotel"
+        app:layout_constraintTop_toTopOf="@id/gambar_hotel"
+        />
+
+    <TextView
+        android:id="@+id/txt_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alamat : "
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/nama_hotel_dialog"
+        app:layout_constraintStart_toStartOf="@id/nama_hotel_dialog"
+        />
+
+    <TextView
+        android:id="@+id/alamat_hotel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="Jalan jalan uya kuya"
+        app:layout_constraintStart_toEndOf="@id/txt_alamat"
+        app:layout_constraintTop_toTopOf="@id/txt_alamat"
+        app:layout_constraintBottom_toBottomOf="@id/txt_alamat"
+        />
+
+    <TextView
+        android:id="@+id/txt_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rating Syariah: "
+        app:layout_constraintTop_toBottomOf="@id/txt_alamat"
+        app:layout_constraintStart_toStartOf="@id/txt_alamat"
+        />
+
+    <TextView
+        android:id="@+id/syaria_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/txt_rating"
+        app:layout_constraintBottom_toBottomOf="@id/txt_rating"
+        app:layout_constraintStart_toEndOf="@id/txt_pengelolaan"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_star"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintStart_toEndOf="@id/syaria_rating"
+        app:layout_constraintBottom_toBottomOf="@id/syaria_rating"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/syaria_rating"/>
+
+    <TextView
+        android:id="@+id/txt_produk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rating Produk: "
+        app:layout_constraintTop_toBottomOf="@id/txt_rating"
+        app:layout_constraintStart_toStartOf="@id/txt_rating"
+        />
+
+    <TextView
+        android:id="@+id/produk_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/txt_produk"
+        app:layout_constraintBottom_toBottomOf="@id/txt_produk"
+        app:layout_constraintStart_toEndOf="@id/txt_pengelolaan"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_star"
+        app:layout_constraintStart_toEndOf="@id/produk_rating"
+        app:layout_constraintBottom_toBottomOf="@id/produk_rating"
+        app:layout_constraintTop_toTopOf="@id/produk_rating"/>
+
+    <TextView
+        android:id="@+id/txt_pelayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rating Pelayanan: "
+        app:layout_constraintTop_toBottomOf="@id/txt_produk"
+        app:layout_constraintStart_toStartOf="@id/txt_produk"
+        />
+
+    <TextView
+        android:id="@+id/pelayanan_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/txt_pelayanan"
+        app:layout_constraintBottom_toBottomOf="@id/txt_pelayanan"
+        app:layout_constraintStart_toEndOf="@id/txt_pengelolaan"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_star"
+        app:layout_constraintStart_toEndOf="@id/pelayanan_rating"
+        app:layout_constraintBottom_toBottomOf="@id/pelayanan_rating"
+        app:layout_constraintTop_toTopOf="@id/pelayanan_rating"/>
+
+    <TextView
+        android:id="@+id/txt_pengelolaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Rating Pengelolaan: "
+        app:layout_constraintTop_toBottomOf="@id/txt_pelayanan"
+        app:layout_constraintStart_toStartOf="@id/txt_pelayanan"
+        />
+
+    <TextView
+        android:id="@+id/pengelolaan_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp"
+        app:layout_constraintTop_toTopOf="@id/txt_pengelolaan"
+        app:layout_constraintBottom_toBottomOf="@id/txt_pengelolaan"
+        app:layout_constraintStart_toEndOf="@id/txt_pengelolaan"
+        />
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_star"
+        app:layout_constraintStart_toEndOf="@id/pengelolaan_rating"
+        app:layout_constraintBottom_toBottomOf="@id/pengelolaan_rating"
+        app:layout_constraintTop_toTopOf="@id/pengelolaan_rating"/>
+
+    <ImageView
+        android:id="@+id/gambar_hotel"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/ic_hotel"
+        app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/btn_book"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/button_background"
+        android:text="Book"
+        android:textColor="#FAffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guide"/>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="CANCEL"
+        android:textColor="#FA000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guide"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+
+</android.support.constraint.ConstraintLayout>
