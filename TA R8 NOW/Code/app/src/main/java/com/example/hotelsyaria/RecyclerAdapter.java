@@ -2,20 +2,39 @@ package com.example.hotelsyaria;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.RecyclerView;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import static android.content.ContentValues.TAG;
+import static java.util.stream.Collectors.toMap;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     ArrayList<ModelHotel> listHotel;
     Activity act;
+    public ArrayList<ArrayList> sorted_hasil;
+    ArrayList<Float> bobot_produk,bobot_pelayanan,bobot_pengelolaan;
 
     public RecyclerAdapter(Activity act, ArrayList<ModelHotel> listHotel) {
         this.listHotel = listHotel;
@@ -42,6 +61,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return new myViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         TextView nama_hotel = ((myViewHolder)viewHolder).nama_hotel;
@@ -65,7 +85,38 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             view.findViewById(R.id.btn_cancel).setOnClickListener(v1 -> builder.dismiss());
             view.findViewById(R.id.btn_book).setOnClickListener(v1 -> {
                 Toast.makeText(act, "Hotel succesfully booked !", Toast.LENGTH_SHORT).show();
-                builder.dismiss();
+                try{
+                    PreferenceHandler preferenceHandler= new PreferenceHandler(act);
+                    ArrayList<ArrayList<Float>> preferences = preferenceHandler.getPref();
+                    ArrayList<ArrayList<Float>> tmp = new ArrayList<>();
+                    if(preferences==null){
+                        preferences=new ArrayList<>();
+                        preferences.add(new ArrayList<>());
+                        preferences.add(new ArrayList<>());
+                        preferences.add(new ArrayList<>());
+
+                    }
+
+                    float[] tmpPref=convertPref(new float[]{listHotel.get(i).getProduk(),listHotel.get(i).getPelayanan(),listHotel.get(i).getPengelolaan()});
+                    preferences.get(0).add(tmpPref[0]);
+                    preferences.get(1).add(tmpPref[1]);
+                    preferences.get(2).add(tmpPref[2]);
+
+                    preferenceHandler.setPref(preferences);
+                    ArrayList<ModelHotel> clonedData = cloneData();
+                    listHotel.clear();
+                    ArrayList<ArrayList> hasil = normalisasi(preferences);
+                    for(int j =0;j<10;j++){
+                        listHotel.add(clonedData.get(Integer.parseInt(String.valueOf(hasil.get(0).get(j)))-1));
+                    }
+                    notifyDataSetChanged();
+
+                }catch(Exception e ){
+                    Log.d(TAG, "onBindViewHolder: "+e.getLocalizedMessage());
+                }
+                finally {
+                    builder.dismiss();
+                }
             });
             builder.setContentView(view);
             builder.setCancelable(true);
@@ -77,5 +128,89 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public int getItemCount() {
         return listHotel.size();
+    }
+
+    float[] convertPref(float[] pref){
+        float x,y,z,sum=0;
+        sum=pref[0]+pref[1]+pref[2];
+        x=pref[0]/sum;
+        y=pref[1]/sum;
+        z=pref[2]/sum;
+        return new float[]{x,y,z};
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    ArrayList<ArrayList> normalisasi(ArrayList<ArrayList<Float>> prefList){
+        ArrayList<ArrayList<Float>> matrix = new PreferenceHandler(act).getMatrix();
+        float[] preferensi=prefToArray(prefList);
+
+        Map<String,Float> hasil=new HashMap<>();
+        for(int i=0;i<10;i++){
+            float pre_hasil=0;
+            for(int j =0;j<3;j++){
+                ArrayList<Float> sorted=new ArrayList<>(matrix.get(j));
+                Collections.sort(sorted);
+                float bobot_alternatif = matrix.get(j).get(i);
+                float x_min= sorted.get(0);
+                float x_max= sorted.get(sorted.size()-1);
+                pre_hasil+=preferensi[j]*(bobot_alternatif-x_min)/(x_min+x_max);
+            }
+            hasil.put(Integer.toString(i+1),pre_hasil);
+        }
+        Map<String, Float> sorted = hasil
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .collect(toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2,
+                        LinkedHashMap::new));
+
+
+        sorted_hasil = new ArrayList<>();
+        ArrayList<String> list_key = new ArrayList<>();
+        ArrayList<Float> list_value= new ArrayList<>();
+        for(int i =0;i<hasil.size();i++){
+            String key =(String) sorted.keySet().toArray()[i];
+            Float value =(float) sorted.get(key);
+            list_key.add(key);
+            list_value.add(value);
+        }
+        sorted_hasil.add(list_key);
+        sorted_hasil.add(list_value);
+        return sorted_hasil;
+    }
+
+    float[] prefToArray(ArrayList<ArrayList<Float>> preference){
+        float pr,pl,pg,x,y,z,sum=0;
+
+        for(float i : preference.get(0)){
+            sum+=i;
+        }
+        x=sum/preference.get(0).size();
+        sum=0;
+
+        for(float i : preference.get(1)){
+            sum+=i;
+        }
+        y=sum/preference.get(1).size();
+        sum=0;
+
+        for(float i : preference.get(2)){
+            sum+=i;
+        }
+        z=sum/preference.get(2).size();
+
+        sum=x+y+z;
+        pr=x/sum;
+        pl=y/sum;
+        pg=z/sum;
+
+        return new float[] {pr,pl,pg};
+
+    }
+
+    ArrayList<ModelHotel> cloneData() {
+        ArrayList<ModelHotel> clone = new ArrayList<>(listHotel.size());
+        clone.addAll(listHotel);
+        return clone;
     }
 }

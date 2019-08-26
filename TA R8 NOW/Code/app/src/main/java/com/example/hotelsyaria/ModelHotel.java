@@ -1,14 +1,50 @@
 package com.example.hotelsyaria;
 
-import android.support.annotation.Nullable;
+
+
+import java.util.ArrayList;
 
 public class ModelHotel {
     private String nama_hotel,alamat_hotel,rating_syariah;
-    private Float rating_umum,produk,pelayanan,pengelolaan;
+    private Float rating_umum,produk,pelayanan,pengelolaan,bobot_produk,bobot_pelayanan,bobot_pengelolaan;
+    private ArrayList<String> facilityException;
 
     public ModelHotel(String nama_hotel, String alamat_hotel) {
         this.nama_hotel = nama_hotel;
         this.alamat_hotel = alamat_hotel;
+        facilityException = new ArrayList<>();
+    }
+
+    public ArrayList<String> getFacilityException() {
+        return facilityException;
+    }
+
+    public void setFacilityException(ArrayList<String> facilityException) {
+        this.facilityException = facilityException;
+    }
+
+    public Float getBobot_produk() {
+        return bobot_produk;
+    }
+
+    public void setBobot_produk(Float bobot_produk) {
+        this.bobot_produk = bobot_produk;
+    }
+
+    public Float getBobot_pelayanan() {
+        return bobot_pelayanan;
+    }
+
+    public void setBobot_pelayanan(Float bobot_pelayanan) {
+        this.bobot_pelayanan = bobot_pelayanan;
+    }
+
+    public Float getBobot_pengelolaan() {
+        return bobot_pengelolaan;
+    }
+
+    public void setBobot_pengelolaan(Float bobot_pengelolaan) {
+        this.bobot_pengelolaan = bobot_pengelolaan;
     }
 
     public Float getRating_umum() {
