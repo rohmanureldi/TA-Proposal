@@ -84,7 +84,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             ((TextView)view.findViewById(R.id.pengelolaan_rating)).setText(listHotel.get(i).getPengelolaan().toString());
             view.findViewById(R.id.btn_cancel).setOnClickListener(v1 -> builder.dismiss());
             view.findViewById(R.id.btn_book).setOnClickListener(v1 -> {
-                Toast.makeText(act, "Hotel succesfully booked !", Toast.LENGTH_SHORT).show();
+
                 try{
                     PreferenceHandler preferenceHandler= new PreferenceHandler(act);
                     ArrayList<ArrayList<Float>> preferences = preferenceHandler.getPref();
@@ -96,6 +96,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         preferences.add(new ArrayList<>());
 
                     }
+                    ArrayList<ModelHotel> listBooked = preferenceHandler.getListBooked();
+                    if(listBooked==null){
+                        listBooked=new ArrayList<>();
+                    }
+                    listBooked.add(listHotel.get(i));
+                    preferenceHandler.setlistBooked(listBooked);
 
                     float[] tmpPref=convertPref(new float[]{listHotel.get(i).getProduk(),listHotel.get(i).getPelayanan(),listHotel.get(i).getPengelolaan()});
                     preferences.get(0).add(tmpPref[0]);
@@ -110,7 +116,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         listHotel.add(clonedData.get(Integer.parseInt(String.valueOf(hasil.get(0).get(j)))-1));
                     }
                     notifyDataSetChanged();
-
+                    Toast.makeText(act, "Hotel succesfully booked !", Toast.LENGTH_SHORT).show();
                 }catch(Exception e ){
                     Log.d(TAG, "onBindViewHolder: "+e.getLocalizedMessage());
                 }
@@ -209,8 +215,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
 
     ArrayList<ModelHotel> cloneData() {
-        ArrayList<ModelHotel> clone = new ArrayList<>(listHotel.size());
-        clone.addAll(listHotel);
+        ArrayList<ModelHotel> clone = new ArrayList<>();
+        clone.addAll(new PreferenceHandler(act).getListHotel());
         return clone;
     }
 }
