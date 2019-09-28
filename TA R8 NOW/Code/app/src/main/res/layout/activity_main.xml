@@ -110,6 +110,18 @@
             android:textSize="30sp"
             />
 
+        <ImageView
+            android:id="@+id/iv_info_produk"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/txt_produk"
+            app:layout_constraintBottom_toBottomOf="@id/txt_produk"
+            app:layout_constraintLeft_toRightOf="@id/txt_produk"
+            app:layout_constraintStart_toEndOf="@id/txt_produk"
+            android:src="@drawable/ic_info"
+            />
+
         <TextView
             android:id="@+id/txt_produk"
             android:layout_width="wrap_content"
@@ -136,6 +148,18 @@
             app:layout_constraintStart_toStartOf="@id/txt_produk"
             app:layout_constraintEnd_toEndOf="parent"
 
+            />
+
+        <ImageView
+            android:id="@+id/iv_info_pelayanan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/txt_pelayanan"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pelayanan"
+            app:layout_constraintLeft_toRightOf="@id/txt_pelayanan"
+            app:layout_constraintStart_toEndOf="@id/txt_pelayanan"
+            android:src="@drawable/ic_info"
             />
 
         <TextView
@@ -166,6 +190,18 @@
 
             />
 
+        <ImageView
+            android:id="@+id/iv_info_pengelolaan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/txt_pengelolaan"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pengelolaan"
+            app:layout_constraintLeft_toRightOf="@id/txt_pengelolaan"
+            app:layout_constraintStart_toEndOf="@id/txt_pengelolaan"
+            android:src="@drawable/ic_info"
+            />
+
         <TextView
         android:id="@+id/txt_pengelolaan"
         android:layout_width="wrap_content"
@@ -192,6 +228,18 @@
             app:layout_constraintStart_toStartOf="@id/txt_pengelolaan"
             app:layout_constraintEnd_toEndOf="parent"
 
+            />
+
+        <ImageView
+            android:id="@+id/iv_info_rating_umum"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/txt_ratingUmum"
+            app:layout_constraintBottom_toBottomOf="@id/txt_ratingUmum"
+            app:layout_constraintLeft_toRightOf="@id/txt_ratingUmum"
+            app:layout_constraintStart_toEndOf="@id/txt_ratingUmum"
+            android:src="@drawable/ic_info"
             />
 
         <TextView

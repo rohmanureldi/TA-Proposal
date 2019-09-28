@@ -2,21 +2,29 @@ package com.example.hotelsyaria;
 
 
 
+import android.widget.ImageView;
+
 import java.util.ArrayList;
 
 public class ModelHotel {
     private String nama_hotel,alamat_hotel,rating_syariah;
     private Float rating_umum,produk,pelayanan,pengelolaan,bobot_produk,bobot_pelayanan,bobot_pengelolaan;
     private ArrayList<String> facilityException;
+    private int[] images;
 
-    public ModelHotel(String nama_hotel, String alamat_hotel) {
+    public ModelHotel(String nama_hotel, String alamat_hotel,int[]images) {
         this.nama_hotel = nama_hotel;
         this.alamat_hotel = alamat_hotel;
         facilityException = new ArrayList<>();
+        this.images=images;
     }
 
     public ArrayList<String> getFacilityException() {
         return facilityException;
+    }
+
+    public int[] getImages() {
+        return images;
     }
 
     public void setFacilityException(ArrayList<String> facilityException) {

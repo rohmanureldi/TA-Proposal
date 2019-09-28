@@ -80,23 +80,24 @@ public class HasilActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        cleanData(data);
+
 
 
         listHotel = new ArrayList<>();
         listHotel = new ArrayList<>();
-        listHotel.add(new ModelHotel("Hotel Grand Asrilia", "Jl. Pelajar Pejuang 45 No. 123"));
-        listHotel.add(new ModelHotel("Hotel Horison", "Jl. Pelajar Pejuang 45 No. 121"));
-        listHotel.add(new ModelHotel("Hotel Yello", "Jl. Pasir Kaliki No. 25"));
-        listHotel.add(new ModelHotel("Hotel Aston Pasteur", "Jl. Dr. Djunjunan No. 162"));
-        listHotel.add(new ModelHotel("Hotel Aston Braga ", "Jl. Braga No. 99"));
-        listHotel.add(new ModelHotel("Hotel Four Points", "Jl. Ir. H. Djuanda No. 46"));
-        listHotel.add(new ModelHotel("Hotel Hilton", " Jl. HOS Tjokroaminoto No.41"));
-        listHotel.add(new ModelHotel("Shakti Hotel Bandung", "Jl. Soekarno Hatta No.753"));
-        listHotel.add(new ModelHotel("Hotel I", "Jalan Pasadena"));
-        listHotel.add(new ModelHotel("Hotel J", "Jalan Pasadena"));
+        listHotel.add(new ModelHotel("Hotel Grand Asrilia", "Jl. Pelajar Pejuang 45 No. 123",new int[]{R.drawable.as_cover,R.drawable.as_dining,R.drawable.as_room}));
+        listHotel.add(new ModelHotel("Hotel Horison", "Jl. Pelajar Pejuang 45 No. 121",new int[]{R.drawable.ho_cover,R.drawable.ho_receptionis,R.drawable.ho_room}));
+        listHotel.add(new ModelHotel("Hotel Yello", "Jl. Pasir Kaliki No. 25",new int[]{R.drawable.ye_cover,R.drawable.ye_dining,R.drawable.ye_room}));
+        listHotel.add(new ModelHotel("Hotel Aston Pasteur", "Jl. Dr. Djunjunan No. 162",new int[]{R.drawable.astp_cover,R.drawable.astp_dining,R.drawable.astp_room}));
+        listHotel.add(new ModelHotel("Hotel Aston Braga ", "Jl. Braga No. 99",new int[]{R.drawable.astb_cover,R.drawable.astb_dining,R.drawable.astb_room}));
+        listHotel.add(new ModelHotel("Hotel Four Points", "Jl. Ir. H. Djuanda No. 46",new int[]{R.drawable.fp_cover,R.drawable.fp_dining,R.drawable.fp_room}));
+        listHotel.add(new ModelHotel("Hotel Hilton", " Jl. HOS Tjokroaminoto No.41",new int[]{R.drawable.hi_cover,R.drawable.hi_dining,R.drawable.hi_room}));
+        listHotel.add(new ModelHotel("Shakti Hotel Bandung", "Jl. Soekarno Hatta No.753",new int[]{R.drawable.sh_cover,R.drawable.sh_dining,R.drawable.sh_room}));
+        listHotel.add(new ModelHotel("Hotel I", "Jalan Pasadena",new int[]{R.drawable.ic_hotel,R.drawable.ic_hotel,R.drawable.ic_hotel}));
+        listHotel.add(new ModelHotel("Hotel J", "Jalan Pasadena",new int[]{R.drawable.ic_hotel,R.drawable.ic_hotel,R.drawable.ic_hotel}));
         addFacilityException(0, new String[]{"spa", "olg"});
         addFacilityException(5, new String[]{"spa"});
+        cleanData(data);
         prepareData();
         hitungRatingSyariah();
         ArrayList<ArrayList> hasil = normalisasi(getIntent().getFloatArrayExtra("preference"));
@@ -144,8 +145,10 @@ public class HasilActivity extends AppCompatActivity {
                 pelayanan_value.add(tmp_pelayanan);
                 pengelolaan_value.add(tmp_pengelolaan);
                 bobot_umum.add(Float.parseFloat(tmp_umum));
+                listHotel.get(i-1).setRating_umum(Float.parseFloat(tmp_umum)*5);
             }
         }
+
         matrix.add(bobot_umum);
     }
 
