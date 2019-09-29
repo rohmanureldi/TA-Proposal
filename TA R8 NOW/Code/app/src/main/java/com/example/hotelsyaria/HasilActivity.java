@@ -233,7 +233,10 @@ public class HasilActivity extends AppCompatActivity {
                 float bobot_alternatif = matrix.get(j).get(i);
                 float x_min= sorted.get(0);
                 float x_max= sorted.get(sorted.size()-1);
-                pre_hasil+=preferensi[j]*(bobot_alternatif-x_min)/(x_min+x_max);
+                float tmp=((bobot_alternatif-x_min)/(x_min+x_max));
+//                pre_hasil+=preferensi[j]*tmp;
+//                String x ="";
+                pre_hasil+=preferensi[j]*(bobot_alternatif/x_max);
             }
             hasil.put(Integer.toString(i+1),pre_hasil);
         }
