@@ -4,7 +4,7 @@
     android:id="@+id/item_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="120dp"
     android:clickable="true"
     android:outlineProvider="bounds"
     android:elevation="2dp"
@@ -26,24 +26,30 @@
 
         <TextView
             android:id="@+id/nama_hotel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Nama hotel"
             android:textSize="20sp"
+            android:layout_marginEnd="20dp"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             android:layout_marginStart="15dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/gambar_hotel_item"
             app:layout_constraintTop_toTopOf="@id/gambar_hotel_item"
             />
 
         <TextView
             android:id="@+id/alamat_hotel"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:text="Alamat Hotel"
             android:textSize="13sp"
             android:textColor="#A9000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="@id/nama_hotel"
             app:layout_constraintTop_toBottomOf="@id/nama_hotel"
             />
@@ -82,14 +88,5 @@
             app:layout_constraintBottom_toBottomOf="@id/syaria_rating"
             />
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/ic_arrow_grey"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

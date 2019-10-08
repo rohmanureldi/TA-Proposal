@@ -86,7 +86,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             ((TextView)view.findViewById(R.id.nama_hotel_dialog)).setText(listHotel.get(i).getNama_hotel());
             ((TextView)view.findViewById(R.id.alamat_hotel)).setText(listHotel.get(i).getAlamat_hotel());
-            ((TextView)view.findViewById(R.id.syaria_rating)).setText(listHotel.get(i).getRating_umum().toString());
+            ((TextView)view.findViewById(R.id.tv_rating_umum)).setText(listHotel.get(i).getRating_umum().toString());
+            ((TextView)view.findViewById(R.id.syaria_rating)).setText(listHotel.get(i).getRating_syariah());
             ((TextView)view.findViewById(R.id.produk_rating)).setText(listHotel.get(i).getProduk().toString());
             ((TextView)view.findViewById(R.id.pelayanan_rating)).setText(listHotel.get(i).getPelayanan().toString());
             ((TextView)view.findViewById(R.id.pengelolaan_rating)).setText(listHotel.get(i).getPengelolaan().toString());

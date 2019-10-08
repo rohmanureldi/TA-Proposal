@@ -12,6 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.annimon.stream.Collector;
+import com.annimon.stream.Collectors;
+import com.annimon.stream.Stream;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,10 +23,15 @@ import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
+import java8.util.Maps;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -105,7 +114,7 @@ public class HasilActivity extends AppCompatActivity {
 
 
         sortedListHotel = new ArrayList<>();
-        for(int i =0;i<10;i++){
+        for(int i =9;i>=0;i--){
             sortedListHotel.add(listHotel.get(Integer.parseInt(String.valueOf(hasil.get(0).get(i)))-1));
         }
 
@@ -240,13 +249,16 @@ public class HasilActivity extends AppCompatActivity {
             }
             hasil.put(Integer.toString(i+1),pre_hasil);
         }
-        Map<String, Float> sorted = hasil
-                .entrySet()
-                .stream()
-                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
-                        LinkedHashMap::new));
 
+
+//        Map<String, Float> sorted = hasil
+//                .entrySet()
+//                .stream()
+//                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+//                .collect(toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
+//                        LinkedHashMap::new));
+
+        Map<String, Float> sorted = sortByValue(hasil);
 
         ArrayList<ArrayList> sorted_hasil = new ArrayList<>();
         ArrayList<String> list_key = new ArrayList<>();
@@ -260,6 +272,30 @@ public class HasilActivity extends AppCompatActivity {
         sorted_hasil.add(list_key);
         sorted_hasil.add(list_value);
         return sorted_hasil;
+    }
+
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> unsortMap) {
+
+        List<Map.Entry<K, V>> list =
+                new LinkedList<>(unsortMap.entrySet());
+
+        Collections.sort(list, (o1, o2) -> (o1.getValue()).compareTo(o2.getValue()));
+
+        Map<K, V> result = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : list) {
+            result.put(entry.getKey(), entry.getValue());
+        }
+
+        return result;
+
+    }
+
+    public static <K, V extends Comparable<? super V>> Map<K, V> sortByKey(Map<K, V> map) {
+        Map<K, V> result = new LinkedHashMap<>();
+        for (Map.Entry<K, V> entry : map.entrySet()) {
+            result.put(entry.getKey(), entry.getValue());
+        }
+        return result;
     }
 
 }

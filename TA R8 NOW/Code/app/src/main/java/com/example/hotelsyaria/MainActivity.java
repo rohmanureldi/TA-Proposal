@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         return new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                tv.setText(Integer.toString(progress));
+                tv.setText(Integer.toString(progress+1));
             }
 
             @Override
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         sbProduk.setOnSeekBarChangeListener(listener(findViewById(R.id.sb_progress_produk)));
         sbPengelolaan.setOnSeekBarChangeListener(listener(findViewById(R.id.sb_progress_pengelolaan)));
         sbRatingUmum.setOnSeekBarChangeListener(listener(findViewById(R.id.sb_progress_ratingUmum)));
+
     }
 
     private void onClickListener() {
@@ -79,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private float[] getPreferences() {
-        int pelayanan = sbPelayanan.getProgress();
-        int pengelolaan = sbPengelolaan.getProgress();
-        int produk = sbProduk.getProgress();
-        int umum = sbRatingUmum.getProgress();
+        int pelayanan = sbPelayanan.getProgress()+1;
+        int pengelolaan = sbPengelolaan.getProgress()+1;
+        int produk = sbProduk.getProgress()+1;
+        int umum = sbRatingUmum.getProgress()+1;
         float sum = (pelayanan / 5f) + pengelolaan / 5f + produk / 5f + umum / 5f;
         return new float[]{umum / (5 * sum), produk / (5 * sum), pelayanan / (5 * sum), pengelolaan / (5 * sum)};
 
