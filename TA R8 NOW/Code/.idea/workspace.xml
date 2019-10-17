@@ -15,9 +15,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12441a94-eb6c-4dde-b210-fdd07ff67b00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../DOKUMEN JURNAL/Draw.io/Versi 4.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../../DOKUMEN JURNAL/Draw.io/Versi 4.drawio" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../DOKUMEN JURNAL/JURNAL URANG.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../DOKUMEN JURNAL/JURNAL URANG.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../DOKUMEN JURNAL/~$RNAL URANG.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DOKUMEN JURNAL/~$RNAL URANG.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../DOKUMEN JURNAL/~$RNAL URANG.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lembar Survey.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Lembar Survey.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +33,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="RR8M30A950E" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="4_WVGA_Nexus_S_API_22" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -40,22 +45,24 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="6001">
               <caret line="353" column="21" selection-start-line="353" selection-start-column="21" selection-end-line="353" selection-end-column="21" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="225" column="41" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="41" />
+            <state relative-caret-position="507">
+              <caret line="175" column="49" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#cleanData#0;class#HasilActivity#0" />
                 <element signature="method#addFacilityException#0;class#HasilActivity#0" />
+                <element signature="method#hitungRatingSyariah#0;class#HasilActivity#0" />
               </folding>
             </state>
           </provider>
@@ -64,12 +71,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+            <state relative-caret-position="1513">
+              <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#showInfo#0;class#MainActivity#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="236" selection-start-line="7" selection-start-column="236" selection-end-line="7" selection-end-column="236" />
             </state>
           </provider>
         </entry>
@@ -115,12 +130,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_hotel_click.xml">
-          <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3247">
               <caret line="191" column="51" selection-start-line="191" selection-start-column="51" selection-end-line="191" selection-end-column="51" />
             </state>
           </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -162,9 +177,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/BookedAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/raw/data.csv" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/ModelHotel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_hasil.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_hotel.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_info.xml" />
@@ -172,13 +185,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_hotel_click.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="23" />
-    <option name="y" value="-28" />
-    <option name="width" value="1943" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="20" />
+    <option name="y" value="-30" />
+    <option name="width" value="1945" />
     <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -188,8 +203,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,8 +223,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="4_WVGA_Nexus_S_API_22" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-10-05T05:15:10.388Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_28" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2019-10-13T23:17:51.184Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -371,10 +386,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16308725" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1624161" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -385,14 +401,13 @@
       <window_info anchor="bottom" id="Version Control" order="0" />
       <window_info anchor="bottom" id="Logcat" order="1" weight="0.62966913" />
       <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32917964" />
       <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5013423" side_tool="true" weight="0.21447721" />
-      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.49932885" visible="true" weight="0.21447721" />
+      <window_info anchor="bottom" id="Build" order="5" sideWeight="0.49932885" visible="true" weight="0.21313673" />
       <window_info anchor="bottom" id="Android Profiler" order="6" show_stripe_button="false" weight="0.32977587" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.5616622" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.49844238" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.5607477" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.43297586" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32870865" />
-      <window_info anchor="right" id="SQLite Explorer" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" />
@@ -400,6 +415,7 @@
       <window_info anchor="right" id="Preview" order="4" weight="0.32569295" />
       <window_info anchor="right" id="Android WiFi ADB" order="5" weight="0.3295302" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="SQLite Explorer" order="7" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -411,27 +427,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java</url>
-          <line>273</line>
+          <line>261</line>
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java</url>
-          <line>246</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java</url>
-          <line>253</line>
+          <line>241</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java</url>
-          <line>262</line>
+          <line>250</line>
           <properties />
           <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java</url>
+          <line>248</line>
+          <properties />
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -642,13 +658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="66" selection-start-line="5" selection-start-column="66" selection-end-line="5" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/AndroidSDK/sources/android-28/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -697,12 +706,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" column="78" selection-start-line="21" selection-start-column="78" selection-end-line="21" selection-end-column="78" />
+        <state relative-caret-position="1513">
+          <caret line="102" column="63" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#showInfo#0;class#MainActivity#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="236" selection-start-line="7" selection-start-column="236" selection-end-line="7" selection-end-column="236" />
         </state>
       </provider>
     </entry>
@@ -749,11 +764,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/hotelsyaria/HasilActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="225" column="41" selection-start-line="225" selection-start-column="41" selection-end-line="225" selection-end-column="41" />
+        <state relative-caret-position="507">
+          <caret line="175" column="49" selection-start-line="175" selection-start-column="49" selection-end-line="175" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#cleanData#0;class#HasilActivity#0" />
             <element signature="method#addFacilityException#0;class#HasilActivity#0" />
+            <element signature="method#hitungRatingSyariah#0;class#HasilActivity#0" />
           </folding>
         </state>
       </provider>

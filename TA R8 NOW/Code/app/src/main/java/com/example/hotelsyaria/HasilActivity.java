@@ -3,18 +3,12 @@ package com.example.hotelsyaria;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.annimon.stream.Collector;
-import com.annimon.stream.Collectors;
-import com.annimon.stream.Stream;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +17,6 @@ import java.io.InputStreamReader;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -31,18 +24,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import java8.util.Maps;
-
 import static java.util.stream.Collectors.toMap;
 
 public class HasilActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     public ArrayList<ModelHotel> clonedListHotel, listHotel,sortedListHotel;
-    Button btnOpenFilter,btnOpenPref;
-    ArrayList<CheckBox> listCheckBox;
-    ArrayList<ArrayList<Integer>> listFilter;
-    ArrayList<Integer> filterProduk, filterPelayanan;
+//    Button btnOpenFilter,btnOpenPref;
+//    ArrayList<CheckBox> listCheckBox;
+//    ArrayList<ArrayList<Integer>> listFilter;
+//    ArrayList<Integer> filterProduk, filterPelayanan;
     ArrayList<String> index_produk, index_pelayanan, index_pengelolaan;
     ArrayList<ArrayList<String>> produk_value, pelayanan_value, pengelolaan_value;
     ArrayList<Float> bobot_produk, bobot_pelayanan, bobot_pengelolaan,bobot_umum,listRating;
@@ -182,9 +173,9 @@ public class HasilActivity extends AppCompatActivity {
                     }
                 }
             }
-            bobot_produk.add((float) (hitungBobot(index_produk, produk_value, k) / maxBobotProduk));
-            bobot_pelayanan.add((float) (hitungBobot(index_pelayanan, pelayanan_value, k) / maxBobotPelayanan));
-            bobot_pengelolaan.add(hitungBobot(index_pengelolaan, pengelolaan_value, k) / 2);
+            bobot_produk.add((float) (hitungBobotHotel(index_produk, produk_value, k) / maxBobotProduk));
+            bobot_pelayanan.add((float) (hitungBobotHotel(index_pelayanan, pelayanan_value, k) / maxBobotPelayanan));
+            bobot_pengelolaan.add(hitungBobotHotel(index_pengelolaan, pengelolaan_value, k) / 2);
 
             listHotel.get(k).setBobot_produk(bobot_produk.get(k));
             listHotel.get(k).setBobot_pelayanan(bobot_pelayanan.get(k));
@@ -203,7 +194,7 @@ public class HasilActivity extends AppCompatActivity {
         }
     }
 
-    float hitungBobot(ArrayList<String> index, ArrayList<ArrayList<String>> value, int j) {
+    float hitungBobotHotel(ArrayList<String> index, ArrayList<ArrayList<String>> value, int j) {
         float sum = 0;
         for (int i = 0; i < index.size(); i++) {
             if (index.get(i).equals("M") && value.get(j).get(i).equals("1")) sum += 1;
@@ -240,12 +231,9 @@ public class HasilActivity extends AppCompatActivity {
                 ArrayList<Float> sorted=new ArrayList<>(matrix.get(j));
                 Collections.sort(sorted);
                 float bobot_alternatif = matrix.get(j).get(i);
-                float x_min= sorted.get(0);
-                float x_max= sorted.get(sorted.size()-1);
-                float tmp=((bobot_alternatif-x_min)/(x_min+x_max));
-//                pre_hasil+=preferensi[j]*tmp;
-//                String x ="";
-                pre_hasil+=preferensi[j]*(bobot_alternatif/x_max);
+//                float x_min= sorted.get(0);
+//                float x_max= sorted.get(sorted.size()-1);
+                pre_hasil+=preferensi[j]*(bobot_alternatif);
             }
             hasil.put(Integer.toString(i+1),pre_hasil);
         }
@@ -290,12 +278,12 @@ public class HasilActivity extends AppCompatActivity {
 
     }
 
-    public static <K, V extends Comparable<? super V>> Map<K, V> sortByKey(Map<K, V> map) {
-        Map<K, V> result = new LinkedHashMap<>();
-        for (Map.Entry<K, V> entry : map.entrySet()) {
-            result.put(entry.getKey(), entry.getValue());
-        }
-        return result;
-    }
+//    public static <K, V extends Comparable<? super V>> Map<K, V> sortByKey(Map<K, V> map) {
+//        Map<K, V> result = new LinkedHashMap<>();
+//        for (Map.Entry<K, V> entry : map.entrySet()) {
+//            result.put(entry.getKey(), entry.getValue());
+//        }
+//        return result;
+//    }
 
 }

@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
         int produk = sbProduk.getProgress()+1;
         int umum = sbRatingUmum.getProgress()+1;
         float sum = (pelayanan / 5f) + pengelolaan / 5f + produk / 5f + umum / 5f;
-        return new float[]{umum / (5 * sum), produk / (5 * sum), pelayanan / (5 * sum), pengelolaan / (5 * sum)};
+        float[] preferensi = new float[]{umum / (5 * sum), produk / (5 * sum), pelayanan / (5 * sum), pengelolaan / (5 * sum)};
+        return preferensi;
 
     }
 

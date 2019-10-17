@@ -4,7 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="produk_deskripsi">Attribut produk merupakan sebuah produk apa saja yang ditawarkan kepada pelanggan ataupun karyawan hotel, seperti contoh: tersedia Al-Quran pada kamar tamu, tersedia ruang ibadah pada ruang karyawan, tersedia perlengkapan ibadah yang lengkap pada ruang ibadah, dll.</string>
-    <string name="pelayanan_deskripsi">Attribut ini merupakan sebuah pelayanan syariah apa saja yang diberikan hotel kepada pelanggan dan karyawannya.</string>
-    <string name="pengelolaan_deskripsi">Attribut pengelolaan mewakili pengelolaan sistem yang diterapkan oleh hotel.</string>
+    <string name="pelayanan_deskripsi">Attribut ini merupakan sebuah pelayanan syariah apa saja yang diberikan hotel kepada pelanggan dan karyawannya. Contohnya seperti: melakukan seleksi terhadap tamu yang datang berpasangan, menyediakan Tajil pada bulan Ramadhan dll.</string>
+    <string name="pengelolaan_deskripsi">Attribut pengelolaan mewakili sistem pengelolaan yang diterapkan oleh hotel. Contohnya : seluruh karyawan dan karyawati memakai seragam yang sopan dan Memiliki dan menerapkan Sistem Jaminan Halal.</string>
     <string name="tripAdvisor_deskripsi">Attribut ini didapat dari rating yang diberikan Trip Advisor kepada hotel.</string>
 </resources>
