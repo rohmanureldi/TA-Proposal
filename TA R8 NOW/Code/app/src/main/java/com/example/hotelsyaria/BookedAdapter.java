@@ -1,5 +1,6 @@
 package com.example.hotelsyaria;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,17 @@ public class BookedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     public static class bookedHolder extends RecyclerView.ViewHolder {
-        TextView nama_hotel,rating_syaria;
+        TextView nama_hotel, rating_overall,prod,pel,peng,umum;
         ConstraintLayout item_layout;
 
         bookedHolder(@NonNull View itemView) {
             super(itemView);
             nama_hotel = itemView.findViewById(R.id.nama_hotel);
-            rating_syaria = itemView.findViewById(R.id.syaria_rating);
+            rating_overall = itemView.findViewById(R.id.syaria_rating);
+            prod = itemView.findViewById(R.id.tvRatingProduk);
+            pel= itemView.findViewById(R.id.tvRatingPelayanan);
+            peng= itemView.findViewById(R.id.tvRatingPengelolaan);
+            umum= itemView.findViewById(R.id.tvRatingUmum);
             item_layout=itemView.findViewById(R.id.item_layout);
         }
     }
@@ -41,15 +46,19 @@ public class BookedAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         return new bookedHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TextView namaHotel = ((bookedHolder)holder).nama_hotel;
-        TextView rating= ((bookedHolder)holder).rating_syaria;
+        TextView rating= ((bookedHolder)holder).rating_overall;
         ConstraintLayout item_layout = ((bookedHolder)holder).item_layout;
 
         namaHotel.setText(listHotel.get(position).getNama_hotel());
         rating.setText(listHotel.get(position).getRating_syariah());
-
+        ((bookedHolder)holder).prod.setText(listHotel.get(position).getProduk().toString());
+        ((bookedHolder)holder).pel.setText(listHotel.get(position).getPelayanan().toString());
+        ((bookedHolder)holder).peng.setText(listHotel.get(position).getPengelolaan().toString());
+        ((bookedHolder)holder).umum.setText(listHotel.get(position).getRating_umum().toString());
 
     }
 

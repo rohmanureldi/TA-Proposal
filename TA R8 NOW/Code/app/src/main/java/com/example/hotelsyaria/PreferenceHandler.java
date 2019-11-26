@@ -11,9 +11,12 @@ import java.util.ArrayList;
 
 public class PreferenceHandler {
     SharedPreferences pref;
+    SharedPreferences hotels;
     Context c;
     public PreferenceHandler(Context c) {
         pref=c.getSharedPreferences("pref_file",Context.MODE_PRIVATE);
+        hotels=c.getSharedPreferences("hotel_file",Context.MODE_PRIVATE);
+
         this.c = c;
     }
 
@@ -36,12 +39,12 @@ public class PreferenceHandler {
     }
 
     void setListHotel(ArrayList<ModelHotel> listHotel){
-        pref.edit().putString("listHotel",new Gson().toJson(listHotel)).apply();
+        hotels.edit().putString("listHotel",new Gson().toJson(listHotel)).apply();
     }
 
     public ArrayList<ModelHotel> getListHotel(){
         Type listType = new  TypeToken<ArrayList<ModelHotel>>() {}.getType();
-        return new Gson().fromJson(pref.getString("listHotel",null),listType);
+        return new Gson().fromJson(hotels.getString("listHotel",null),listType);
     }
 
     public void setlistBooked(ArrayList<ModelHotel> listBooked){
@@ -51,6 +54,15 @@ public class PreferenceHandler {
     public ArrayList<ModelHotel> getListBooked(){
         Type listType = new  TypeToken<ArrayList<ModelHotel>>() {}.getType();
         return new Gson().fromJson(pref.getString("listBooked",null),listType);
+    }
+
+    void setClickedHotel(ModelHotel hotel){
+        hotels.edit().putString("clickedHotel",new Gson().toJson(hotel)).apply();
+    }
+
+    ModelHotel getClickedHotel(){
+        Type type = new TypeToken<ModelHotel>(){}.getType();
+        return new Gson().fromJson(hotels.getString("clickedHotel",null),type);
     }
 
 

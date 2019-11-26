@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -18,7 +18,19 @@
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Overall Syaria"
+        app:layout_constraintEnd_toStartOf="@id/syaria_rating"
+        app:layout_constraintTop_toTopOf="@id/syaria_rating"
+        app:layout_constraintBottom_toBottomOf="@id/syaria_rating"
+        android:layout_marginEnd="10dp"
+        android:textSize="17dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic|bold"
         />
     <TextView
         android:id="@+id/syaria_rating"
@@ -29,6 +41,7 @@
         app:layout_constraintBottom_toBottomOf="@id/nama_hotel"
         android:text="5"
         android:textSize="20sp"
+        android:textStyle="italic|bold"
         android:textColor="@color/colorPrimary"
         />
     <ImageView
@@ -40,6 +53,141 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/nama_hotel"
         app:layout_constraintBottom_toBottomOf="@id/nama_hotel"
+        />
+
+    <TextView
+        android:id="@+id/tvProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Produk"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/nama_hotel"
+        app:layout_constraintStart_toStartOf="@id/nama_hotel"
+        />
+
+    <ImageView
+        android:id="@+id/star1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_star"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvRatingProduk"
+        app:layout_constraintStart_toEndOf="@id/tvRatingProduk"
+        app:layout_constraintBottom_toBottomOf="@id/tvRatingProduk"
+        />
+
+    <TextView
+        android:id="@+id/tvRatingProduk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvProduk"
+        app:layout_constraintStart_toStartOf="@id/tvRatingPelayanan"
+        app:layout_constraintBottom_toBottomOf="@id/tvProduk"
+        android:text="5"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/tvPelayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pelayanan"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvProduk"
+        app:layout_constraintStart_toStartOf="@id/tvProduk"
+        />
+
+    <TextView
+        android:id="@+id/tvRatingPelayanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvPelayanan"
+        app:layout_constraintStart_toEndOf="@id/tvPelayanan"
+        app:layout_constraintBottom_toBottomOf="@id/tvPelayanan"
+        android:text="5"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <ImageView
+        android:id="@+id/star2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_star"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvRatingPelayanan"
+        app:layout_constraintStart_toEndOf="@id/tvRatingPelayanan"
+        app:layout_constraintBottom_toBottomOf="@id/tvRatingPelayanan"
+        />
+
+    <TextView
+        android:id="@+id/tvPengelolaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pengelolaan"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toBottomOf="@id/nama_hotel"
+        app:layout_constraintStart_toEndOf="@id/star1"
+        />
+
+    <TextView
+        android:id="@+id/tvRatingPengelolaan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvPengelolaan"
+        app:layout_constraintStart_toEndOf="@id/tvPengelolaan"
+        app:layout_constraintBottom_toBottomOf="@id/tvPengelolaan"
+        android:text="5"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <ImageView
+        android:id="@+id/star3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_star"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvRatingPengelolaan"
+        app:layout_constraintStart_toEndOf="@id/tvRatingPengelolaan"
+        app:layout_constraintBottom_toBottomOf="@id/tvRatingPengelolaan"
+        />
+
+    <TextView
+        android:id="@+id/tvUmum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Advisor"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvPengelolaan"
+        app:layout_constraintStart_toStartOf="@id/tvPengelolaan"
+        />
+
+    <TextView
+        android:id="@+id/tvRatingUmum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/tvUmum"
+        app:layout_constraintStart_toStartOf="@id/tvRatingPengelolaan"
+        app:layout_constraintBottom_toBottomOf="@id/tvUmum"
+        android:text="5"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        />
+
+    <ImageView
+        android:id="@+id/star4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_star"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintTop_toTopOf="@id/tvRatingUmum"
+        app:layout_constraintStart_toEndOf="@id/tvRatingUmum"
+        app:layout_constraintBottom_toBottomOf="@id/tvRatingUmum"
         />
 
 

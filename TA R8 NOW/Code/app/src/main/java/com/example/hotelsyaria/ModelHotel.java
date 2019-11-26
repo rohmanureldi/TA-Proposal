@@ -2,21 +2,62 @@ package com.example.hotelsyaria;
 
 
 
-import android.widget.ImageView;
-
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ModelHotel {
-    private String nama_hotel,alamat_hotel,rating_syariah;
+    private String nama_hotel,alamat_hotel,rating_syariah,deskripsi,policy;
     private Float rating_umum,produk,pelayanan,pengelolaan,bobot_produk,bobot_pelayanan,bobot_pengelolaan;
     private ArrayList<String> facilityException;
     private int[] images;
+    private Map<String,Integer> fasilitasUmum,fasilitasSyariah;
+
+
+    public void setFasilitasUmum(String[] key, int[] value){
+        fasilitasUmum = new HashMap<>();
+        for(int i = 0 ;i<key.length;i++){
+            fasilitasUmum.put(key[i],value[i]);
+        }
+    }
+
+    public Map<String,Integer> getFasilitasUmum(){
+        return this.fasilitasUmum;
+    }
+
+    public void setFasilitasSyariah(String[] key, int[] value){
+        fasilitasSyariah= new HashMap<>();
+        for(int i = 0 ;i<key.length;i++){
+            fasilitasSyariah.put(key[i],value[i]);
+        }
+    }
+
+    public Map<String,Integer> getFasilitasSyariah(){
+        return this.fasilitasSyariah;
+    }
 
     public ModelHotel(String nama_hotel, String alamat_hotel,int[]images) {
         this.nama_hotel = nama_hotel;
         this.alamat_hotel = alamat_hotel;
         facilityException = new ArrayList<>();
         this.images=images;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsiPolicy(String deskripsi, String policy) {
+        this.deskripsi = deskripsi;
+        this.policy=policy;
+    }
+
+    public String getPolicy() {
+        return policy;
+    }
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
     }
 
     public ArrayList<String> getFacilityException() {

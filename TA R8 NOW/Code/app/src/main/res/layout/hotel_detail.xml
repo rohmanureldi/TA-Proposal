@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/v4"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.synnapps.carouselview.CarouselView
+                android:id="@+id/cvHotelCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:fillColor="#FFFFFFFF"
+                app:pageColor="#00000000"
+                app:radius="6dp"
+                app:slideInterval="3000"
+                app:strokeColor="#FF777777"
+                app:strokeWidth="1dp"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <TextView
+                android:id="@+id/tvHotelName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15sp"
+                android:textColor="#B9000000"
+                app:layout_constraintTop_toBottomOf="@id/cvHotelCarousel"
+                android:text="Nama hotel"
+                android:textStyle="bold"
+                />
+            <ImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_location"
+                app:layout_constraintTop_toBottomOf="@id/tvHotelName"
+                app:layout_constraintStart_toStartOf="@id/tvHotelName"
+                />
+            <TextView
+                android:id="@+id/tvAlamat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="Jalan Buah BatBut"
+                android:textSize="9sp"
+                app:layout_constraintTop_toTopOf="@id/ivLocation"
+                app:layout_constraintStart_toEndOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/ivLocation"
+                />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/vpi__bright_foreground_disabled_holo_light"
+                app:layout_constraintTop_toBottomOf="@id/tvAlamat"
+                app:layout_constraintStart_toStartOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvAlamat"
+                />
+
+            <TextView
+                android:id="@+id/tvRatingUlasan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/v1"
+                android:text="Detail Rating"
+                android:textColor="#B9000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tvSyariah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="@id/tvRatingUlasan"
+                android:text="Syariah"
+                android:textColor="#B9000000"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/tvRatingUlasan"
+                />
+
+            <TextView
+                android:id="@+id/tvRatingSyariah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.5"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/ivStar1"
+                app:layout_constraintTop_toBottomOf="@id/tvSyariah"
+                />
+
+            <TextView
+                android:id="@+id/tvLihatDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:text="Lihat detail"
+                android:textSize="10sp"
+                app:layout_constraintTop_toBottomOf="@id/tvRatingSyariah"
+                app:layout_constraintStart_toStartOf="@id/tvSyariah"
+
+                />
+
+            <ImageView
+                android:id="@+id/ivStar1"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_star"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvRatingSyariah"
+                app:layout_constraintBottom_toBottomOf="@id/tvRatingSyariah"
+                />
+
+
+            <TextView
+                android:id="@+id/tvTripAdvisor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trip Advisor"
+                android:textColor="#B9000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tvSyariah"
+                app:layout_constraintEnd_toEndOf="@id/tvRatingUlasan"
+                app:layout_constraintTop_toTopOf="@id/tvSyariah"
+                app:layout_constraintBottom_toBottomOf="@id/tvSyariah"
+                />
+
+            <TextView
+                android:id="@+id/tvRatingTripAdvisor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.3"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/ivStar2"
+                app:layout_constraintTop_toBottomOf="@id/tvTripAdvisor"
+                />
+
+            <ImageView
+                android:id="@+id/ivStar2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintStart_toStartOf="@id/tvTripAdvisor"
+                app:layout_constraintTop_toBottomOf="@id/tvTripAdvisor"
+                app:layout_constraintBottom_toBottomOf="@id/tvRatingTripAdvisor"
+
+                />
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/vpi__bright_foreground_disabled_holo_light"
+                app:layout_constraintTop_toBottomOf="@id/tvLihatDetail"
+                app:layout_constraintStart_toStartOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvAlamat"
+                />
+
+            <TextView
+                android:id="@+id/tvFasilitasUmum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/v2"
+                android:text="Fasilitas Umum"
+                android:textColor="#B9000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFasilitasUmum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFasilitasUmum"
+                android:orientation="horizontal"
+                />
+
+            <View
+                android:id="@+id/v3"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/vpi__bright_foreground_disabled_holo_light"
+                app:layout_constraintTop_toBottomOf="@id/rvFasilitasUmum"
+                app:layout_constraintStart_toStartOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvAlamat"
+                />
+
+            <TextView
+                android:id="@+id/tvFasilitasSyariah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/v3"
+                android:text="Fasilitas Syariah"
+                android:textColor="#B9000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFasilitasSyariah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/tvFasilitasSyariah"
+                />
+
+            <View
+                android:id="@+id/v5"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/vpi__bright_foreground_disabled_holo_light"
+                app:layout_constraintTop_toBottomOf="@id/rvFasilitasSyariah"
+                app:layout_constraintStart_toStartOf="@id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@id/tvAlamat"
+                />
+            <TextView
+                android:id="@+id/tvDeskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/v5"
+                android:text="Deskripsi"
+                android:textColor="#B9000000"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/tvHotelDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDeskripsi"
+                android:text="Deskripsi"
+                android:textColor="#B9000000"
+                android:textSize="12sp"
+                android:maxLength="300"
+                />
+            <TextView
+                android:id="@+id/tvReadMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="@id/tvHotelDescription"
+                app:layout_constraintEnd_toEndOf="@id/tvHotelDescription"
+                app:layout_constraintTop_toBottomOf="@id/tvHotelDescription"
+                android:textAllCaps="true"
+                android:text="READ MORE"
+                android:textColor="@color/colorPrimary"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+    <View
+        android:id="@+id/v4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/vpi__bright_foreground_disabled_holo_light"
+        app:layout_constraintBottom_toTopOf="@id/clBottombar"
+        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBottombar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <Button
+            android:id="@+id/btnBook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimary"
+            android:text="Pesan Hotel"
+            android:textColor="@android:color/white"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
